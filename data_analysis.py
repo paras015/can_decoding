@@ -158,6 +158,7 @@ def handle_data():
     # select = request.form.get('message', False)
     select1 = request.form.getlist('multiSelect')
     data = []
+    print(va.names)
     if not select1:
         select1.append(va.names[0])
     for i in range(0, len(select1)):
