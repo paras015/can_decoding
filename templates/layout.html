@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Data Analysis</title>
+    <link rel="shortcut icon" href="static/image.ico"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css" type="text/css"/>
+
+
+</head>
+<body style="background-color:rgb(37, 39, 51)">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="{{url_for('static', filename='orion.png')}}" class="img-fluid py-2 navbar-brand" style="width:33vh">
+    <a class="navbar-brand text-primary" style="font-size: 40px">Orion Racing India</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link px-5" href="http://localhost:5000" style="font-size: 25px">Data Analysis<span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link px-5" href="http://localhost:5000/history" style="font-size: 25px">History</a>
+        </div>
+    </div>
+</nav>
+
+<!--Vertical navbar-->
+<!--<div class="bg-dark " id="sidebar" style="position:absolute; top:12vh; height:180vh; width:35vh; z-index: 1000">-->
+<!--  <ul class="nav flex-column bg-white ">-->
+<!--    <li class="nav-item">-->
+<!--        <a href="http://localhost:5000" class="nav-link text-dark font-italic bg-dark">-->
+<!--            <div class="container-fluid py-5">-->
+<!--                <i class="fa fa-th-large text-primary fa-fw ">Data Analysis</i>-->
+<!--            </div>-->
+<!--        </a>-->
+<!--    </li>-->
+<!--    <li class="nav-item">-->
+<!--          <a href="history" class="nav-link text-dark font-italic bg-dark">-->
+<!--            <div class="container-fluid py-5">-->
+<!--                <i class="fa fa-th-large text-primary fa-fw ">History</i>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--</div>-->
+
+{% block content %}
+
+{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

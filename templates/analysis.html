@@ -1,0 +1,210 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--Buttons-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <form action = "http://localhost:5000/upload_file" method = "POST" enctype = "multipart/form-data">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="CSV file" class="text-light btn btn-primary btn-lg mt-3">Import CSV file</label>
+                                <input type="file" class="form-control-file text-light" id="CSV file" name="CSV file" multiple hidden>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-group">
+                                <label for="DBC file" class="text-light btn btn-primary btn-lg mt-3">Import DBC file
+                                    <input type="file" class="form-control-file text-light" id="DBC file" name="DBC file" multiple hidden>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-lg mt-3">Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-9">
+            <form action = "http://localhost:5000/handle_data" method = "POST">
+<!--                onchange="this.form.submit()"-->
+                  <select id="multiSelect"  name="multiSelect" multiple="multiple">
+                    {% for name in names %}
+                    <option value= "{{name}}">{{name}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit" class="btn btn-primary btn-lg mt-3">Submit</button>
+            </form>
+        </div>
+        <div class="col-3">
+            <form>
+                <a href=# id=exportCsv><button class='text-light btn btn-primary btn-lg mt-3'>Export decoded CSV</button></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Charts-->
+<div class="container-fluid">
+    <!-- <div class="row">
+        <div class="col-6">
+            <iframe id="Iframe" src="http://localhost:5000/pathname/" frameborder="0" width="100%" ></iframe>
+        </div>
+        <div class="col-6">
+            <iframe id="iFrame2" src="http://localhost:5000/pathname/" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-4 w-75 h-25">
+            <div class="responsive-plot" id="linePlot1">
+
+            </div>
+        </div>
+        <div class="col-4 w-75 h-25">
+            <div class="responsive-plot" id="linePlot2">
+
+            </div>
+        </div>
+        <div class="col-4 w-75 h-25">
+            <div class="responsive-plot" id="linePlot3">
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 w-75 h-25">
+            <div class="responsive-plot" id="linePlot4">
+
+            </div>
+        </div>
+        <div class="col-4 w-75 mh-25">
+            <div class="responsive-plot" id="linePlot5">
+
+            </div>
+        </div>
+        <div class="col-4 w-75 h-25">
+            <div class="responsive-plot" id="linePlot6">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+          $('a#exportCsv').bind('click', function() {
+            $.getJSON('/export_decoded',
+                function(data) {
+              //do nothing
+            });
+        return false;
+      });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#multiSelect').multiselect({
+            disableIfEmpty: true,
+            buttonWidth: '100%'
+        });
+    });
+</script>
+<script>
+var data = {{data | safe}};
+var i;
+
+LINEPLOT1 = document.getElementById('linePlot1');
+LINEPLOT2 = document.getElementById('linePlot2');
+LINEPLOT3 = document.getElementById('linePlot3');
+LINEPLOT4 = document.getElementById('linePlot4');
+LINEPLOT5 = document.getElementById('linePlot5');
+LINEPLOT6 = document.getElementById('linePlot6');
+
+var elementid = [LINEPLOT1, LINEPLOT2, LINEPLOT3, LINEPLOT4, LINEPLOT5, LINEPLOT6];
+var select1 = {{select | safe}};
+for (i = 0; i < select1.length; i++){
+    console.log(data[i][0]);
+    var trace1 = {
+        x: data[i][0],
+        y: data[i][1],
+        name: data[i][5][0],
+        mode: 'line',
+        line: {
+        width: 2
+      }
+    };
+    var trace2 = {
+        x: data[i][0],
+        y: data[i][2],
+        name: data[i][5][1],
+        mode: 'line',
+        line: {
+        width: 2
+      }
+    };
+    var trace3 = {
+        x: data[i][0],
+        y: data[i][3],
+        name: data[i][5][2],
+        mode: 'line',
+        line: {
+        width: 2
+      }
+    };
+    var trace4 = {
+        x: data[i][0],
+        y: data[i][4],
+        name: data[i][5][3],
+        mode: 'line',
+        line: {
+        width: 2
+      }
+    };
+    var data_ = [trace1, trace2, trace3, trace4];
+    var data1_ = [trace1, trace2, trace3, trace4];
+    var layout = {
+                legend: {
+                    font: {
+                      color: "rgb(255, 255, 255)"
+                    }
+                },
+                title: select1[i],
+                titlefont: {
+                  size: 20,
+                  color: "rgb(255, 255, 255)"
+                },
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                xaxis: {
+                    tickfont: {
+                      family: 'Old Standard TT, serif',
+                      size: 14,
+                      color: 'rgb(255, 255, 255)'
+                    },
+                    zerolinecolor: 'rgb(255, 255, 255)',
+                    zerolinewidth: 3,
+                    gridcolor: 'rgb(105,105,105)',
+                    tickcolor: 'rgb(255, 255, 255)'
+                  },
+                  yaxis: {
+                     tickfont: {
+                      family: 'Old Standard TT, serif',
+                      size: 14,
+                      color: 'rgb(255, 255, 255)'
+                    },
+                    tickcolor: 'rgb(255, 255, 255)',
+                    gridcolor: 'rgb(105,105,105)',
+                    zerolinecolor: 'rgb(255, 255, 255)',
+                    zerolinewidth: 5
+                  }
+    };
+    var config = {responsive: true,
+                  scrollZoom: true};
+    Plotly.newPlot(elementid[i], data_, layout, config);
+};
+</script>
+{% endblock %}
