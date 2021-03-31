@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <form action = "http://localhost:5000/upload_file" method = "POST" enctype = "multipart/form-data">
+            <form action = "{{ url_for('/upload_file') }}" method = "POST" enctype = "multipart/form-data">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-4">
@@ -30,7 +30,7 @@
     </div>
     <div class="row">
         <div class="col-9">
-            <form action = "http://localhost:5000/handle_data" method = "POST">
+            <form action = "{{ url_for('/handle_data') }}" method = "POST">
 <!--                onchange="this.form.submit()"-->
                   <select id="multiSelect"  name="multiSelect" multiple="multiple">
                     {% for name in names %}
