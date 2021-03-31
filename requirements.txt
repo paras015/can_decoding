@@ -1,0 +1,10 @@
+flask
+cantools
+pandas
+os
+binascii
+datetime
+plotly
+numpy
+json
+time
