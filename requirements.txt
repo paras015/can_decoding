@@ -3,3 +3,4 @@ cantools
 pandas
 plotly
 numpy
+gunicorn
