@@ -185,7 +185,8 @@ def background_process_test():
         va.frames[name].to_excel(writer, sheet_name=name, startrow=0, startcol=0)
     writer.save()
     print("Exported")
-    return "nothing"
+    return send_file(file_name, as_attachment=True)
+#     return "nothing"
 
 
 @app.route('/history')
