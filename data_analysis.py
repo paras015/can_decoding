@@ -122,6 +122,7 @@ class Calculations:
         print('Done')
         va.frames = message_frames
         va.names = list(message_frames.keys())
+        print("Names", va.names)
 
 
 @app.route('/analysis')
