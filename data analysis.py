@@ -10,9 +10,9 @@ import numpy as np
 import json
 import plotly.express as px
 import time
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+# import dash
+# import dash_core_components as dcc
+# import dash_html_components as html
 
 app = Flask(__name__)
 ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -192,5 +192,6 @@ def history():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    port = int(os.environ.get('PORT', 33507))
+    app.run(port=port, debug=True)
     app.run(debug=True)
