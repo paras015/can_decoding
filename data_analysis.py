@@ -131,7 +131,7 @@ def analysis():
     return render_template('analysis.html')
 
 
-@app.route('/upload_file', methods=['GET', 'POST'])
+@app.route('/upload_file', methods=['POST'])
 def upload_file():
     dt = str(datetime.datetime.now()).replace(":", "_")
     directory = os.path.join('History', dt)
