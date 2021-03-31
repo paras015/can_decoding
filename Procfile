@@ -1,1 +1,1 @@
-web: gunicorn data analysis:app
+web: gunicorn data_analysis:app
