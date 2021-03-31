@@ -4,3 +4,4 @@ pandas
 plotly
 numpy
 gunicorn
+xlsxwriter
