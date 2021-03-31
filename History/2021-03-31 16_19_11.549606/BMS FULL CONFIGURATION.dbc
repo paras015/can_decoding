@@ -1,0 +1,271 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BMS
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ Temperature40 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature39 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature38 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature37 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 147 Stack6BTemp: 8 Vector__XXX
+ SG_ Temperature48 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature47 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature46 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature45 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 145 Stack5BTemp: 8 Vector__XXX
+ SG_ Cell40 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell39 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell38 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell37 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 146 Stack6ATemp: 8 Vector__XXX
+ SG_ Temperature44 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature43 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature42 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature41 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 144 Stack5ATemp: 8 Vector__XXX
+ SG_ Temperature36 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature35 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature34 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature33 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 140 Stack3ATemp: 8 Vector__XXX
+ SG_ Temperature20 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature19 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature18 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature17 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 143 Stack4BTemp: 8 Vector__XXX
+ SG_ Temperature32 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature31 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature30 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature29 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 142 Stack4ATemp: 8 Vector__XXX
+ SG_ Temperature28 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature27 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature26 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature25 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 141 Stack3BTemp: 8 Vector__XXX
+ SG_ Temperature24 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature23 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature22 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature21 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 139 Stack2BTemp: 8 Vector__XXX
+ SG_ Temperature16 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature15 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature14 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature13 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 138 Stack2ATemp: 8 Vector__XXX
+ SG_ Temperature9 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature12 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature11 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature10 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 137 Stack1BTemp: 8 Vector__XXX
+ SG_ Temperature8 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature7 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature6 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature5 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 136 Stack1ATemp: 8 Vector__XXX
+ SG_ Temperature4 : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature3 : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature2 : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ Temperature1 : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 135 Stack6D: 8 Vector__XXX
+ SG_ Cell96 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell95 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell94 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell93 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 134 Stack6C: 8 Vector__XXX
+ SG_ Cell92 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell91 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell90 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell89 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 133 Stack6B: 8 Vector__XXX
+ SG_ Cell88 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell87 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell86 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell85 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 132 Stack6A: 8 Vector__XXX
+ SG_ Cell84 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell83 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell82 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell81 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 131 Stack5D: 8 Vector__XXX
+ SG_ Cell80 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell79 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell78 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell77 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 130 Stack5C: 8 Vector__XXX
+ SG_ Cell76 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell75 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell74 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell73 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 129 Stack5B: 8 Vector__XXX
+ SG_ Cell72 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell71 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell70 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell69 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 128 Stack5A: 8 Vector__XXX
+ SG_ Cell68 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell67 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell66 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell65 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 127 Stack4D: 8 Vector__XXX
+ SG_ Cell64 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell63 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell62 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell61 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 126 Stack4C: 8 Vector__XXX
+ SG_ Cell60 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell59 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell58 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell57 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 125 Stack4B: 8 Vector__XXX
+ SG_ Cell56 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell55 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell54 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell53 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 124 Stack4A: 8 Vector__XXX
+ SG_ Cell52 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell51 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell50 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell49 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 123 Stack3D: 8 Vector__XXX
+ SG_ Cell48 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell47 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell46 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell45 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 122 Stack3C: 8 Vector__XXX
+ SG_ Cell44 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell43 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell42 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell41 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 121 Stack3B: 8 Vector__XXX
+ SG_ Cell40 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell39 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell38 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell37 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 120 Stack3A: 8 Vector__XXX
+ SG_ Cell36 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell35 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell34 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell33 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 119 Stack2D: 8 Vector__XXX
+ SG_ Cell32 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell31 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell30 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell29 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 118 Stack2C: 8 Vector__XXX
+ SG_ Cell28 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell27 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell26 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell25 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 117 Stack2B: 8 Vector__XXX
+ SG_ Cell24 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell23 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell22 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell21 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 116 Stack2A: 8 Vector__XXX
+ SG_ Cell20 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell19 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell18 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell17 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 115 Stack1D: 8 Vector__XXX
+ SG_ Cell16 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell15 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell14 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell13 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 114 Stack1C: 8 Vector__XXX
+ SG_ Cell09 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell12 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell11 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell10 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 113 Stack1B: 8 Vector__XXX
+ SG_ Cell08 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell07 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell06 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell05 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+BO_ 112 Stack1A: 8 Vector__XXX
+ SG_ Cell04 : 48|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell03 : 32|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell02 : 16|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+ SG_ Cell01 : 0|16@1+ (0.0001,0) [0|65535] "V" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT -3.4E+038 3.4E+038;
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "SigType" "Default";
+BA_ "BusType" "CAN";
+

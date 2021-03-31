@@ -124,6 +124,7 @@ class Calculations:
         va.names = list(message_frames.keys())
 
 
+@app.route('/analysis')
 @app.route('/')
 def analysis():
     return render_template('analysis.html')
