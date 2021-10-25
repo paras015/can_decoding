@@ -10,6 +10,7 @@ import numpy as np
 import json
 import plotly.express as px
 import time
+from tqdm import tqdm
 # import dash
 # import dash_core_components as dcc
 # import dash_html_components as html
@@ -63,34 +64,40 @@ class Calculations:
     def decoding(self):
         start_time = time.time()
         if len(self.dbc_file) == 1:
-            db = cantools.database.load_file(os.path.join(ROOT_PATH, va.dt, self.dbc_file[0].filename), database_format='dbc')
+            db = cantools.database.load_file(os.path.join(ROOT_PATH, va.dt, self.dbc_file[0].filename), database_format='dbc', strict=False)
         else:
             for i in range(len(self.dbc_file)):
                 if i == 0:
                     db = cantools.database.load_file(os.path.join(ROOT_PATH, va.dt, self.dbc_file[i].filename),
-                                                     database_format='dbc')
+                                                     database_format='dbc', strict=False)
                 else:
                     db.add_dbc_file(os.path.join(ROOT_PATH, va.dt, self.dbc_file[i].filename))
 
         names = range(0, 14)
         if len(self.csv_file) == 1:
             df = pd.read_csv(os.path.join(ROOT_PATH, va.dt, self.csv_file[0].filename), delim_whitespace=True, skiprows=3,
-                             skipfooter=1,
+                             skipfooter=2,
                              names=names, engine='python')
         else:
             for i in range(len(self.csv_file)):
                 if i == 0:
                     df = pd.read_csv(os.path.join(ROOT_PATH, va.dt, self.csv_file[i].filename), delim_whitespace=True, skiprows=3,
-                                     skipfooter=1,
+                                     skipfooter=2,
                                      names=names, engine='python')
                 else:
                     df1 = df = pd.read_csv(os.path.join(ROOT_PATH, va.dt, self.csv_file[i].filename), delim_whitespace=True, skiprows=3,
-                                     skipfooter=1,
+                                     skipfooter=2,
                                      names=names, engine='python')
                     df = pd.concat([df, df1], ignore_index=True)
-
-        df.rename(columns={0: 'Time', 2: 'Id'}, inplace=True)
+        # print(df['Id'].where(df['Id'] == 'trigger'))
+        print(df[df[2] == 'trigger'])
         print(df.shape)
+        df.rename(columns={0: 'Time', 2: 'Id'}, inplace=True)
+        df = df.replace(np.nan, 0)     
+        df = df.replace("Errorframe", np.nan)  
+        df = df.dropna() 
+        df = df.astype({'Id' : int})
+        # print(df.dtypes)	
         message_frames = {}
 
         def int_to_hex(num):
@@ -101,26 +108,30 @@ class Calculations:
             return x
 
         for index in range(6, df.shape[1]):
-            df.iloc[:, index] = df.iloc[:, index].map(lambda x: int_to_hex(x))
+            df.iloc[:, index] = df.iloc[:, index].map(lambda x: int_to_hex(int(x)))
         a = 1
-        for i in range(6, df.shape[1], 2):
-            df['Cell' + str(a)] = df.iloc[:, i + 1].astype(str) + "" + df.iloc[:, i].astype(str)
-            a += 1
-        df['Data'] = df['Cell1'] + df['Cell2'] + df['Cell3'] + df['Cell4']
-        df = df.drop(['Cell1', 'Cell2', 'Cell3', 'Cell4'], axis=1)
-        df['Data'] = df['Data'].map(lambda x: bytearray.fromhex(x))
-        df['Data'].apply(lambda x: x.reverse())
 
-        for row in range(df.shape[0]):
-            name = db.get_message_by_frame_id(df['Id'][row]).name
+        # for i in range(6, df.shape[1], 2):
+        #     df['Cell' + str(a)] = df.iloc[:, i + 1].astype(str) + "" + df.iloc[:, i].astype(str)
+        #     a += 1
+        df['Data'] = df.iloc[:, 6].astype(str) + "" + df.iloc[:, 7].astype(str) + "" + df.iloc[:, 8].astype(str) + "" + df.iloc[:, 9].astype(str) + "" + df.iloc[:, 10].astype(str) + "" + df.iloc[:, 11].astype(str) + "" + df.iloc[:, 12].astype(str) + "" + df.iloc[:, 13].astype(str)
+        # df['Data'] = df['Cell1'] + df['Cell2'] + df['Cell3'] + df['Cell4']
+        # df = df.drop(['Cell1', 'Cell2', 'Cell3', 'Cell4'], axis=1)
+        df['Data'] = df['Data'].map(lambda x: bytearray.fromhex(x))
+        # df['Data'].apply(lambda x: x.reverse())
+        # print(df)
+        for row in tqdm(range(df.shape[0]), desc="Loading...", miniters=1):
+            name = db.get_message_by_frame_id(df.iloc[row, 2]).name
             if not name in message_frames:
                 message_frames[name] = pd.DataFrame()
-            decoded = db.decode_message(df['Id'][row], df['Data'][row])
-            decoded['Time'] = df['Time'][row]
+            decoded = db.decode_message(df.iloc[row, 2], df.iloc[row, 14])
+            decoded['Time'] = df.iloc[row, 0]
             message_frames[name] = message_frames[name].append(decoded, ignore_index=True)
+            # print(decoded)
         print("--- %s seconds ---" % (time.time() - start_time))
         print('Done')
         va.frames = message_frames
+        # print(va.frames)
         va.names = list(message_frames.keys())
         print("Names", va.names)
 
@@ -177,6 +188,7 @@ def handle_data():
 
 @app.route('/export_decoded')
 def background_process_test():
+    print("IN")
     dt = str(datetime.datetime.now()).replace(":", "_")
     file_name = "Decoded - " + dt + ".xlsx"
     file_name = os.path.join('Decoded', file_name)
